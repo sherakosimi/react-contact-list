@@ -16,8 +16,31 @@ const ContactList = ({ onAddNewClick }) => {
       dataIndex: "phone",
       key: "phone",
     },
+    {
+      title: "DOB",
+      dataIndex:"DOB",
+      render: (text, record, index)=> {
+        return text.format('YYYY-MM-DD');
+      }
+    },
+    {
+       title :"Gender",
+       dataIndex: "gender",
+    },
+    {
+      title :"isRelative?",
+      dataIndex: "isRelative",
+      render: (value) => {
+        if (value){
+          return <div style = {{color:'red'}}>Yes</div>
+        }
+        else{
+          return "No"
+        }
+      }
+   }
   ];
-
+    console.log(contacts)
   return (
     <>
       <Space>
